@@ -1,0 +1,13 @@
+from collections import defaultdict
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        count = defaultdict(int)
+        for num in nums:
+            count[num] += 1
+            if count[num] > 1:
+                return True
+        return any(x > 1 for x in count.values())
+
+
+
+        
